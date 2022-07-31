@@ -1,4 +1,14 @@
 # top level is the Stage - contains jobs
+
+trigger: none
+
+name: $(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+
+parameters:
+    - name: envname
+      type: string
+      displayName: Target Environment Name
+      
 stages:
 - stage: A
   displayName: Stage A
