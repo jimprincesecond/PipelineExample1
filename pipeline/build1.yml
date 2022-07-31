@@ -7,7 +7,7 @@ name: $(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 parameters:
     - name: envname
       type: string
-      displayName: Target Environment Name
+      displayName: Enter Parameter1 value
       
 stages:
 - stage: A
@@ -20,6 +20,7 @@ stages:
     steps:
     - script: echo step A1
     - script: echo ${envname}
+    - script: echo $(envname)
 
 - stage: B
   displayName: Stage B
