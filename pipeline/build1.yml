@@ -1,0 +1,24 @@
+
+#trigger:
+#  branches:
+#    include:
+#      - '*'
+
+# top level is the Stage - contains jobs
+stages:
+- stage: A
+  displayName: Build C# project
+  pool:
+    name: Default
+ 
+  jobs:
+    steps:
+    - script: echo step   A1
+
+- stage: B
+  pool:
+    name: Default
+  jobs:
+  - job: B1
+    steps:
+    - script: echo step   B1
