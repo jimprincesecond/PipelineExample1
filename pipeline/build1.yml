@@ -1,9 +1,3 @@
-
-#trigger:
-#  branches:
-#    include:
-#      - '*'
-
 # top level is the Stage - contains jobs
 stages:
 - stage: A
