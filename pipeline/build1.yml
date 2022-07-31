@@ -1,7 +1,7 @@
 # top level is the Stage - contains jobs
 stages:
 - stage: A
-  displayName: Build C# project
+  displayName: Stage A
   pool:
     name: Default
  
@@ -10,6 +10,7 @@ stages:
     - script: echo step   A1
 
 - stage: B
+  displayName: Stage B
   pool:
     name: Default
   jobs:
