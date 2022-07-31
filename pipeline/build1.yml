@@ -6,6 +6,7 @@ stages:
     name: Default
  
   jobs:
+  - job: A1
     steps:
     - script: echo step   A1
 
