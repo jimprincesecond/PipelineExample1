@@ -14,13 +14,19 @@ stages:
   displayName: Stage A
   pool:
     name: Default
+
+  variables:
+  - group: variableGroup1
+  - name: myVariable1
+    value: ${{ group1Var1 }}
  
   jobs:
   - job: A1
     steps:
     - script: echo step A1
     - script: echo ${envname}
-    - script: echo $(envname)
+    - script: ${{ parameters.envname }}
+    - script: $(myVariable1)
 
 - stage: B
   displayName: Stage B
