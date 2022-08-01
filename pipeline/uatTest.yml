@@ -26,9 +26,9 @@ stages:
 
     - script: echo Releasing to webserver no = ${{parameters.webServer}}
 
-    - template: templates\templateExample.yml
+    - template: templates\example.template.yml
       parameters:
         env: 'uat'
-        webServer: ${{ parameters.webServer }}
+        webserver: ${{ parameters.webServer }}
 
 
