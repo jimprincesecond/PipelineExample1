@@ -1,14 +1,9 @@
-trigger: none
 
-resources:
 
 parameters:
   env: ''
   webserver: ''
 
-stages:
-- stage: 'jim'
-- displayName: 'jim'
   jobs:
   - deployment: Deploy${{parameters.env}}
     displayName: Deploy${{parameters.env}}
