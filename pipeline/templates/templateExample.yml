@@ -1,6 +1,6 @@
 parameters:
   env: ''
-  webServer: ''
+  webserver: ''
 jobs:
   - deployment: Deploy${{parameters.env}}
     displayName: Deploy${{parameters.env}}
