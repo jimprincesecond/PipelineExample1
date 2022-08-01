@@ -9,6 +9,8 @@ parameters:
     - group: hangfiredashboard-$(env)
     - name: appserverIp
       value: webserverIp$(webserver)
+    - name: env
+      value: $(env)
 
     strategy:
       runOnce:
