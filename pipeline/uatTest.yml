@@ -1,5 +1,8 @@
 trigger: none
 
+pool:
+  name: Default
+
 parameters:
 - name: webServer
   displayName: Web Server to release to
@@ -8,9 +11,6 @@ parameters:
   values:
   - 01
   - 02   
-
-pool:
-  name: Default
 
 stages:   
 - stage: DeployUAT
