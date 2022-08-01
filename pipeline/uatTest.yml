@@ -20,7 +20,8 @@ stages:
   - name: jim
     value: jim
 
-  - jobs:
+  jobs:
+  - job: Deploy details
     steps:
 
     - script: echo Releasing to webserver no = ${{parameters.webServer}}
