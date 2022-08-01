@@ -5,9 +5,16 @@ trigger: none
 name: $(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 parameters:
-    - name: envname
-      type: string
-      displayName: Enter Parameter1 value
+- name: envname
+  type: string
+  displayName: Enter Parameter1 value
+- name: webServer
+  displayName: Web Server to release to
+  type: string
+  default: 01 # this should be remembered from last pipeline run
+  values:
+  - 01
+  - 02      
       
 stages:
 - stage: A
