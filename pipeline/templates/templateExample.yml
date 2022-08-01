@@ -1,9 +1,7 @@
 parameters:
   env: ''
   webServer: ''
-
 jobs:
-    # Deploy MspWeb
   - deployment: Deploy${{parameters.env}}
     displayName: Deploy${{parameters.env}}
 
