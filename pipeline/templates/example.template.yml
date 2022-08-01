@@ -2,24 +2,36 @@ parameters:
   env: ''
   webserver: ''
 jobs:
-  - deployment: Deploy
-    displayName: Deploy
-    variables: 
+- job: A1
+  variables: 
     - group: hangfiredashboard-${{parameters.env}}
     - name: webserverIp
       value: webserverIp${{parameters.webserver}}
     - name: myEnv
       value: ${{parameters.env}}
-    environment: 
-      name: jim
-      resourceType: VirtualMachine
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - checkout: self
-          - script: echo envname = $(myEnv)
-          - script: echo deploying to ip $(webserverIp)
+  steps:
+    - script: echo envname = $(myEnv)
+    - script: echo deploying to ip $(webserverIp)
+
+
+#  - deployment: Deploy
+#    displayName: Deploy
+#    variables: 
+#    - group: hangfiredashboard-${{parameters.env}}
+#    - name: webserverIp
+#      value: webserverIp${{parameters.webserver}}
+#    - name: myEnv
+#      value: ${{parameters.env}}
+#    environment: 
+#      name: jim
+#      resourceType: VirtualMachine
+#    strategy:
+#      runOnce:
+#        deploy:
+#          steps:
+#          - checkout: self
+#          - script: echo envname = $(myEnv)
+#          - script: echo deploying to ip $(webserverIp)
 
 
 
