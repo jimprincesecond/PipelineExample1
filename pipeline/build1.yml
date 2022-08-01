@@ -17,19 +17,20 @@ stages:
 
   variables:
   - group: variableGroup1
-  - name: test1
-    value: test1
-  - name: mywebserveripaddress
+  - name: varTest1
+    value: varTest1
+  - name: varWebserverIpaddress
     value: ${{variables.webserveripaddress}}
  
   jobs:
   - job: A1
     steps:
     - script: echo step A1
-    - script: echo envname = $(envname)
-    - script: echo test1 = $(test1)
-    - script: echo mywebserveripaddress =$(mywebserveripaddress)
-    - script: echo webserveripaddress = $(webserveripaddress)
+    - script: echo envname = $(parameters.envname)
+    - script: echo test1 = $(varTest1)
+    - script: echo varWebserverIpaddress =$(varWebserverIpaddress)
+    - script: echo group webserveripaddress = $(webserverIpaddress)
+    - script: echo group webserveripaddress2 = $(variables.webserverIpaddress)
 
 - stage: B
   displayName: Stage B
