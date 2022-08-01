@@ -9,7 +9,6 @@ parameters:
   - 01
   - 02   
 
-
 stages:   
 - stage: DeployUAT
   displayName: 'DeployUAT'
@@ -18,13 +17,17 @@ stages:
     name: Default
 
   variables:
+  - name: jim
+    value: jim
 
-  jobs:
-  - script: echo Releasing to webserver no = ${{parameters.webServer}}
+  - jobs:
+    steps:
 
-  - template: templates\templateExample.yml
-    parameters:
-      env: 'uat'
-      webServer: ${{ parameters.webServer }}
+    - script: echo Releasing to webserver no = ${{parameters.webServer}}
+
+    - template: templates\templateExample.yml
+      parameters:
+        env: 'uat'
+        webServer: ${{ parameters.webServer }}
 
 
