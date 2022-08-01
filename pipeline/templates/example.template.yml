@@ -2,11 +2,11 @@ parameters:
   env: ''
   webserver: ''
   jobs:
-  - deployment: Deploy${{parameters.env}}
-    displayName: Deploy${{parameters.env}}
+  - deployment: Deploy$(env)
+    displayName: Deploy$(env)
 
     variables: 
-    - group: hangfiredashboard-${{ parameters.env }}
+    - group: hangfiredashboard-$(env)
     - name: appserverIp
       value: webserverIp$(webserver)
 
@@ -15,7 +15,7 @@ parameters:
         deploy:
           steps:
           - checkout: self
-          - script: echo envname = ${{parameters.env}}
+          - script: echo envname = $(env)
           - script: echo deploying to ip $(appserverIp)
 
 
