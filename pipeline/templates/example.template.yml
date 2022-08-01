@@ -10,11 +10,17 @@ jobs:
         value: $(webserverIp01)
       ${{ if eq( parameters.webserver, '02' )}}:
         value: $(webserverIp02)
+    - name: webserverName
+      ${{ if eq( parameters.webserver, '01' )}}:
+        value: $(webserverName01)
+      ${{ if eq( parameters.webserver, '02' )}}:
+        value: $(webserverName02)
     - name: myEnv
       value: ${{parameters.env}}
   steps:
     - script: echo envname = $(myEnv)
     - script: echo deploying to ip $(webserverIp)
+    - script: echo deploying to name $(webserverName)
 
 
 #  - deployment: Deploy
