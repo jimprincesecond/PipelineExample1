@@ -2,15 +2,15 @@ parameters:
   env: ''
   webserver: ''
   jobs:
-  - deployment: Deploy$(env)
-    displayName: Deploy$(env)
+  - deployment: Deploy
+    displayName: Deploy
 
     variables: 
-    - group: hangfiredashboard-$(env)
+    - group: hangfiredashboard-${{parameters.env}}
     - name: appserverIp
-      value: webserverIp$(webserver)
+      value: webserverIp${{parameters.webserver}}
     - name: env
-      value: $(env)
+      value: ${{parameters.env}}
 
     strategy:
       runOnce:
