@@ -6,6 +6,9 @@ jobs:
   variables: 
     - group: hangfiredashboard-${{parameters.env}}
     - name: webserverIp
+      ${{ if eq( parameters.webserver, '01' )}}:
+      value: webserverIp${{parameters.webserver}}
+      ${{ if eq( parameters.webserver, '02' )}}:
       value: webserverIp${{parameters.webserver}}
     - name: myEnv
       value: ${{parameters.env}}
