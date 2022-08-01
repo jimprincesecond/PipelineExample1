@@ -17,16 +17,15 @@ stages:
 
   variables:
   - group: variableGroup1
-  - name: myVariable1
-    value: ${{ group1Var1 }}
+  - name: webserver-ipaddress
+    value: $[variables.webserver-ipaddress]
  
   jobs:
   - job: A1
     steps:
     - script: echo step A1
     - script: echo ${envname}
-    - script: ${{ parameters.envname }}
-    - script: $(myVariable1)
+    - script: $(webserver-ipaddress)
 
 - stage: B
   displayName: Stage B
