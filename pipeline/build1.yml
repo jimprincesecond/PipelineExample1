@@ -17,7 +17,7 @@ stages:
 
   variables:
   - group: variableGroup1
-  - name: webserver-ipaddress
+  - name: mywebserver-ipaddress
     value: $[variables.webserver-ipaddress]
  
   jobs:
@@ -25,6 +25,7 @@ stages:
     steps:
     - script: echo step A1
     - script: echo ${envname}
+    - script: $(mywebserver-ipaddress)
     - script: $(webserver-ipaddress)
 
 - stage: B
