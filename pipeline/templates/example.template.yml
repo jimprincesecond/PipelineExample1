@@ -1,4 +1,9 @@
+trigger: none
+
+resources:
+
 parameters:
+  env: ''
   webserver: ''
 
 stages:
