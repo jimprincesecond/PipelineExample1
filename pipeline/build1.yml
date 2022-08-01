@@ -34,6 +34,7 @@ stages:
     steps:
     - script: echo step A1
     - script: echo envname = ${{parameters.envname}}
+    - script: echo We are upgrading web server ${{parameters.webServer}}
     - script: echo test1 = $(varTest1)
     - script: echo varWebserverIpaddress =$(varWebserverIpaddress)
     - script: echo group webserveripaddress = $(webserverIpaddress)

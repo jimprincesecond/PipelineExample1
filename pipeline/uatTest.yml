@@ -1,0 +1,30 @@
+trigger: none
+
+parameters:
+- name: webServer
+  displayName: Web Server to release to
+  type: string
+  default: 01 # this should be remembered from last pipeline run
+  values:
+  - 01
+  - 02   
+
+
+stages:   
+- stage: DeployUAT
+  displayName: 'DeployUAT'
+
+  pool:
+    name: Default
+
+  variables:
+
+  jobs:
+  - script: echo Releasing to webserver no = ${{parameters.webServer}}
+
+  - template: templates\templateExample.yml
+    parameters:
+      env: 'uat'
+      webServer: ${{ parameters.webServer }}
+
+
