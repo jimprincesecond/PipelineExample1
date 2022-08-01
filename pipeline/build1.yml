@@ -18,7 +18,7 @@ stages:
   variables:
   - group: variableGroup1
   - name: mywebserver-ipaddress
-    value: $[variables.webserver-ipaddress]
+    value: ${{variables.webserver-ipaddress}}
  
   jobs:
   - job: A1
