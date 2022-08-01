@@ -10,6 +10,9 @@ jobs:
       value: webserverIp${{parameters.webserver}}
     - name: myEnv
       value: ${{parameters.env}}
+    environment: 
+      name: jim
+      resourceType: VirtualMachine
     strategy:
       runOnce:
         deploy:
