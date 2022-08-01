@@ -1,24 +1,22 @@
 parameters:
   env: ''
   webserver: ''
-  jobs:
+jobs:
   - deployment: Deploy
     displayName: Deploy
-
     variables: 
     - group: hangfiredashboard-${{parameters.env}}
-    - name: appserverIp
+    - name: webserverIp
       value: webserverIp${{parameters.webserver}}
-    - name: env
+    - name: myEnv
       value: ${{parameters.env}}
-
     strategy:
       runOnce:
         deploy:
           steps:
           - checkout: self
-          - script: echo envname = $(env)
-          - script: echo deploying to ip $(appserverIp)
+          - script: echo envname = $(myEnv)
+          - script: echo deploying to ip $(webserverIp)
 
 
 

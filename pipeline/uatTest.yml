@@ -1,8 +1,6 @@
 trigger: none
-
 pool:
   name: Default
-
 parameters:
 - name: webServer
   displayName: Web Server to release to
@@ -11,11 +9,9 @@ parameters:
   values:
   - 01
   - 02   
-
 stages:   
 - stage: DeployUAT
   displayName: 'DeployUAT'
-
   jobs:   
   - template: templates\example.template.yml
     parameters:
