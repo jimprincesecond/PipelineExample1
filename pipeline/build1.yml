@@ -28,6 +28,7 @@ stages:
     value: varTest1
   - name: varWebserverIpaddress
     value: $(webserverIpaddress)
+  - name: varWebserverIp
  
   jobs:
   - job: A1
@@ -46,4 +47,5 @@ stages:
   jobs:
   - job: B1
     steps:
-    - script: echo step   B1
+    - script: echo Upgrading web server
+    - script: echo We are upgrading web server ${{parameters.webServer}}
