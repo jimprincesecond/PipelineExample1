@@ -20,7 +20,7 @@ stages:
   - name: varTest1
     value: varTest1
   - name: varWebserverIpaddress
-    value: ${{variables.webserveripaddress}}
+    value: ${{ variables.webserverIpaddress }}
  
   jobs:
   - job: A1
@@ -30,7 +30,6 @@ stages:
     - script: echo test1 = $(varTest1)
     - script: echo varWebserverIpaddress =$(varWebserverIpaddress)
     - script: echo group webserveripaddress = $(webserverIpaddress)
-    - script: echo group webserveripaddress2 = $(variables.webserverIpaddress)
 
 - stage: B
   displayName: Stage B
