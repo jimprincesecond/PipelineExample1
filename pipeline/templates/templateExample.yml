@@ -3,15 +3,16 @@ parameters:
    env: ''
    webServer: ''
 
-variables: 
+jobs:
+    # Deploy MspWeb
+  - deployment: Deploy${{parameters.env}}
+    displayName: Deploy${{parameters.env}}
+
+  variables: 
   - group: hangfiredashboard-${{ parameters.env }}
   - name: appserverIp
     value: webserverIp$(webserverIpaddress)
 
-jobs:
-    # Deploy MspWeb
-    - deployment: Deploy${{parameters.env}}
-      displayName: Deploy${{parameters.env}}
 
       strategy:
           runOnce:
