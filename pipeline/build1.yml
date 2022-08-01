@@ -20,7 +20,7 @@ stages:
   - name: varTest1
     value: varTest1
   - name: varWebserverIpaddress
-    value: ${{ variables.webserverIpaddress }}
+    value: ${{ webserverIpaddress }}
  
   jobs:
   - job: A1
